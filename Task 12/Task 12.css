@@ -1,0 +1,45 @@
+h5 {
+    background-color: pink;
+}
+
+#head5 {
+    background-color: yellow;
+}
+
+#head6 {
+    background-color: mediumturquoise;
+}
+
+.element5 {
+    background-color: aqua;
+}
+
+p, h4, section {
+    background-color: bisque;
+}
+
+* {
+    background-color: aliceblue;
+}
+
+div em {
+    background-color: rgb(134, 232, 200);
+}
+
+/* Combinators */
+div em span {
+    background-color: rgb(203, 120, 120);
+}
+
+div > span {
+    background-color: cornflowerblue;
+}
+
+div + aside {
+    background-color: rgb(170, 164, 164);
+}
+
+div ~ bdi {
+    background-color: lightgoldenrodyellow
+}
+

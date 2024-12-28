@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Task 12.css">
+  <title>Task 12</title>
+</head>
+<body>
+  <h1>CSS Selectors</h1>
+  <hr>
+  <h2><mark>Simple Selectors</mark></h2>
+  <p>These are some basic css selectors</p>
+  <hr>
+  <h3>1. Element or Tag Name Selector</h3>
+  <h5>Styled h5 tag with pink background color.</h5>
+  <hr>
+  <h3>2. ID Selector</h3>
+  <h5 id="head5">Styled h5 (id = "head5") with yellow background color.</h5>
+  <h6 id="head6">Styled h5 (id = "head6") with mediumturquoise background color.</h6>
+  <hr>
+  <h3>3. Class Selector</h3>
+  <h5 class="element5">Styled h4 (class = "element5") with aqua background color.</h5>
+  <article class="element5">Styled article (class = "element5") with aqua background color.</article>
+  <hr>
+  <h3>4. Group Selector</h3>
+  <p>Styled group of tags (p, h4, section) with bisque background color.</p>
+  <h4>Styled group of tags (p, h4, section) with bisque background color.</h4>
+  <section>Styled group of tags (p, h4, section) with bisque background color.</section>
+  <hr>
+  <h3>5. Universal Selector</h3>
+  <b>Styled with background color aliceblue</b>
+  <hr>
+  <h2><mark>Combinator Selectors</mark></h2>
+  <p>A combinator is something that explains the relationship between the selectors.</p>
+  <hr>
+  <h3>6. Descendant Selector</h3>
+  <p>The descendant combinator matches all elements that are descendants of a specified element.</p>
+  <div>
+    <em>"em" inside "div" , Styled with background color rgb(134, 232, 200) and <span>"span" </span> inside "em" , 
+     <span>(Styled with background color rgb(203, 120, 120))</span></em>
+  </div>
+  <hr>
+  <h3>7. Child Combinator (>)</h3>
+  <p>he child combinator selects all elements that are the children of a specified element.</p>
+  <div>
+    <span>This "span" is direct child of "div" (Styled with background color cornflowerblue)</span>
+    <p><span>This "span" is nested child of "div" </span>and direct child of "p"</p>
+  </div>
+  <hr>
+  <h3>8. Next Sibling Combinator (+)</h3>
+  <p>The + selector is used to select an element that is directly after another specific element.</p>
+  <div></div>
+  <aside>"aside" direct after "div" styled with background color rgb(170, 164, 164);</aside>
+  <aside>"aside" after "div>aside" styled with Universal selector's color</aside>
+  <hr>
+  <h3>9. Subsequent-sibling Combinator (~)</h3>
+  <p>The subsequent-sibling combinator selects all elements that are next siblings of a specified element.</p>
+  <div></div>
+  <bdi>"bdi" direct after "div" styled with background color lightgoldenrodyellow</bdi>
+  <br>
+  <bdi>"bdi" after "div>aside" styled with background color lightgoldenrodyellow</bdi>
+  <hr>
+  <h2><mark>Pseudo-class Selectors</mark></h2>
+  <p>A pseudo-class is used to define a special state of an element.</p>
+  <p>Select elements based on a certain state <b>We will study in further classes</b></p>
+  <hr>
+  <h2><mark>Pseudo-elements Selectors</mark></h2>
+  <p>A CSS pseudo-element is used to style specific parts of an element.</p>
+  <p>select and style a part of an element <b>We will study in further classes</b></p>
+  <hr>
+  <h2><mark>Attribute Selectors</mark></h2>
+  <p>The [attribute] selector is used to select elements with a specified attribute. <b>We will study in further classes</b></p>
+  <hr>
+</body>
+</html>
