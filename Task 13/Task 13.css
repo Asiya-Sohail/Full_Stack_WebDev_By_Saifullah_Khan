@@ -1,0 +1,80 @@
+* {
+     font-family: "Poppins", serif; /* google fonts used */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    color: black;  /* name color used */
+    background-color: #b9d39b; /* hex color used */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* rgba color used */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em; /* Font Size defined */
+    text-align: center;
+    line-height: 50px; 
+}
+
+div + h1, div + h2 {  /* Next Sibling Combinator used */
+    font-weight: 200px; /* Font Weight defined */
+}
+
+nav {
+    text-align: center; /* text align used */
+}
+
+nav a {
+    color: black;
+    text-decoration: none; /* Text Decoration used to remove underlines */
+    padding: 0 15px;
+    font-size: 1.2rem;
+}
+
+.section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
+    font-size: 0.8rem;
+}
