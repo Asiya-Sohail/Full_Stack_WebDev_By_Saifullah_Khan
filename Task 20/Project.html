@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .main {
+            min-height: 100vh;
+            width: 100vw;
+            background-color: #96A3B0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 2vw 0;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 50vw;
+            background-color: #c7c7c7;
+            padding: 10px;
+            border-radius: 0.8rem;
+        }
+
+        .card img {
+            width: 200px;
+            border-radius: 0.8rem; /*We can also give in vw */
+        }
+
+        .card .right {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .right h2 {
+            font-size: 3rem;
+        }
+
+        .right p {
+            font-size: 1.1rem;
+            color: #4c4c4c;
+        }
+
+        .right .buy-now {
+            margin-top: 1vw;
+        }
+
+        button {
+            background-color: #212121;
+            color: #c4c1c1;
+            padding: 0.6rem 0.7rem;
+            border-radius: 0.4rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 800px) {  
+            .main {
+                padding: 4vh 8vw;
+            }
+
+            .card {
+                width: 80vw;
+                /* flex-direction: column; */
+            }
+
+            .card img {
+                width: 50%;
+            }
+
+            .right h2 {
+                font-size: 2.4rem;
+            }
+
+            .right p {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 481px) { 
+            .main {
+                padding: 4vh 8vw;
+            }
+
+            .card {
+                width: 90vw;
+                flex-direction: column;
+            }
+
+            .card img {
+                width: 100%;
+                border-radius: 0.5rem;
+            }
+
+            .right h2 {
+                font-size: 2rem;
+            }
+
+            .right p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/f7/ca/da/f7cadaab58ed7690fe3f0a3d00112442.jpg" alt="Shoes" class="image">
+            <div class="right">
+                <h2 class="heading">Nike Shoes</h2>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iusto vitae explicabo labore molestiae quisquam.</p>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/f7/ca/da/f7cadaab58ed7690fe3f0a3d00112442.jpg" alt="Shoes" class="image">
+            <div class="right">
+                <h2 class="heading">Nike Shoes</h2>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iusto vitae explicabo labore molestiae quisquam.</p>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/f7/ca/da/f7cadaab58ed7690fe3f0a3d00112442.jpg" alt="Shoes" class="image">
+            <div class="right">
+                <h2 class="heading">Nike Shoes</h2>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iusto vitae explicabo labore molestiae quisquam.</p>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
