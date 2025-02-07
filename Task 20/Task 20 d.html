@@ -1,0 +1,200 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 20 d</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .main {
+            min-height: 100vh; /* To allow content to grow */
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background-color: azure;
+        }
+
+        .main .toprow {
+            text-align: center;
+            display: flex;
+            flex-direction: column; /* When flex dir is column, align items do horizontal center, while in row it's vertical center*/
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .main .toprow h1 {
+            font-size: 1.7em;
+        }
+
+        .main .toprow span {
+            width: 6em;
+            border-bottom: 2px solid green;
+        }
+
+        .main .toprow p {
+            font-size: 0.6em;
+            color: #6a6a6a;
+        }
+
+        .bottomrow {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: row;
+            gap: 6rem;
+        }
+
+        .bottomrow .card {
+            /* flex: 33%; */
+            position: relative;
+        }
+
+        .bottomrow .card .back {
+            background-color: rgb(99, 160, 169);
+            width: 11.5rem;
+            height: 12rem;
+            border-radius: 0.8rem;
+            rotate:12deg;
+            z-index: 1;
+        }
+
+        .bottomrow .card #back2 {
+            background-color: rgb(145, 191, 77);
+            rotate: -12deg;
+        }
+
+        .bottomrow .card #back3 {
+            background-color: rgb(47, 183, 138);
+        }
+
+        .bottomrow .card .front {
+            background-color: white;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            position: absolute;
+            width: 11.5rem;
+            height: 12rem;
+            border-radius: 0.8rem;
+            top: 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bottomrow .card .front .circle {
+            position: absolute;
+            top: -0.8rem;
+            left: 4rem;
+            border-radius: 100;
+            width: 3.5rem;
+            height: 3.5rem;
+            z-index: 3;
+        }
+
+        .bottomrow .card .front .circle img {
+            width: inherit;
+            height: inherit;
+            border-radius: 100em;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .bottomrow .card .front .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 2em 0.8em 1em;
+        }
+
+        .bottomrow .card .front .content h2 {
+            font-size: 1em;
+        }
+
+        .bottomrow .card  .front .content .pos {
+            font-style: italic;
+            color: #6a6a6a;
+            font-size: 0.5em;
+        }
+
+        .bottomrow .card .front .content .text {
+            font-size: 0.3em;
+            color: #848282;
+        }
+
+        @media  (max-width : 780px) {
+            .main {
+                margin: 2rem 0;
+            } 
+            body {
+                overflow-y: auto;
+            }
+            .bottomrow {
+                flex-direction : column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="toprow">
+            <h1>Our Team</h1>
+            <span class="line"></span>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, maxime. Inventore veniam molestiae adipisci culpa.</p>
+        </div>
+        <div class="bottomrow">
+            <div class="card">
+                <div class="back"></div>
+                <div class="front">
+                    <div class="circle">
+                        <img src="https://i0.wp.com/previsomedia.com/wp-content/uploads/2015/04/business-manager-2.jpg?fit=795%2C500&ssl=1" alt="person 1">
+                    </div>
+                    <div class="content">
+                        <h2>Lena Pearce</h2>
+                        <p class="pos">Position</p>
+                        <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam porro corporis illum! Hic nemo iusto illum dolorem ipsum, suscipit libero!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="back" id="back2"></div>
+                <div class="front">
+                    <div class="circle">
+                        <img src="https://i0.wp.com/previsomedia.com/wp-content/uploads/2015/04/business-manager-2.jpg?fit=795%2C500&ssl=1" alt="person 1">
+                    </div>
+                    <div class="content">
+                        <h2>Lena Pearce</h2>
+                        <p class="pos">Position</p>
+                        <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam porro corporis illum! Hic nemo iusto illum dolorem ipsum, suscipit libero!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="back" id="back3"></div>
+                <div class="front">
+                    <div class="circle">
+                        <img src="https://i0.wp.com/previsomedia.com/wp-content/uploads/2015/04/business-manager-2.jpg?fit=795%2C500&ssl=1" alt="person 1">
+                    </div>
+                    <div class="content">
+                        <h2>Lena Pearce</h2>
+                        <p class="pos">Position</p>
+                        <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam porro corporis illum! Hic nemo iusto illum dolorem ipsum, suscipit libero!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

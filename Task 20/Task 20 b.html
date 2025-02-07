@@ -1,0 +1,102 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 20 b</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .main {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: beige;
+      }
+
+      .card {
+        width: 350px;
+        background-color: white;
+        padding: 6px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+
+      .card .card-toprow {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        /* padding: 12px; */
+        margin-bottom: 15px;
+      }
+
+      .card .card-toprow .left {
+        background-color: #212121;
+        padding: 4px;
+        border-radius: 100px;
+        color: white;
+      }
+
+      .card .card-toprow .left span {
+        font-size: 12px;
+        font-weight: 300;
+        padding: 1px;
+      }
+
+      .card .card-toprow .left i {
+        color: orange;
+      }
+
+      .card .card-toprow .right {
+        padding: 6px;
+        background-color: #c7c7c7;
+        border-radius: 8px;
+        rotate: 180deg;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="card">
+        <div class="card-toprow">
+          <div class="left">
+            <i class="ri-time-line"></i>
+            <span>2d left</span>
+          </div>
+          <div class="right">
+            <i class="ri-arrow-left-down-line"></i>
+          </div>
+        </div>
+        <h2 class="heading">GET 30% Discount</h2>
+        <p class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Voluptatibus, enim?
+        </p>
+        <img
+          src="https://i.pinimg.com/736x/17/47/53/174753ef051b3d126a442ca7d6f43d7c.jpg"
+          alt="Product Image"
+          class="product-img"
+        />
+      </div>
+    </div>
+  </body>
+</html>
