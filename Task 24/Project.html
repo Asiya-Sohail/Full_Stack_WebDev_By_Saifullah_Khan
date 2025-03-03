@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            min-height: 100vh; /* for responsive , remove height*/
+            width: 100vw;
+            background-color: lightblue;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 20px;
+            place-content: center;
+            padding: 5vw;
+        }
+
+        .box {
+            background-size: cover;
+            background-position: center;
+            background-color: #c7c7c7;
+            border-radius: 8px;
+            border: 1px solid white;
+            box-shadow: 2px 2px 15px gray;
+        }
+
+        #box1, #box4, #box5, #box7 {
+            grid-row: span 2;
+        }
+
+        #box2, #box3, #box5, #box8 {
+            grid-column: span 2;
+        }
+
+        #box6 {
+            grid-row: span 3;
+        }
+
+        .box:hover {
+            background-position: bottom;
+            background-blend-mode: luminosity;
+        }
+
+        @media screen and (max-width: 500px){
+
+            .main {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+            }
+
+            #box1, #box4, #box5, #box7 {
+                grid-row: span 1;
+            }
+
+            #box2, #box3, #box5, #box8 {
+                grid-column: span 1;
+            }
+
+            #box6 {
+                grid-row: span 1;
+            }
+
+            .box {
+                width: 100%;
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box" id="box1" style="background-image: url('https://i.pinimg.com/474x/a6/23/91/a6239172cbe962d941ede26db4868da0.jpg');"></div>
+        <div class="box" id="box2" style="background-image: url('https://i.pinimg.com/736x/44/66/17/4466172c3d81d8a1e8f16e8d8c5d37d3.jpg');"></div>
+        <div class="box" id="box3" style="background-image: url('https://i.pinimg.com/474x/47/88/24/4788249da973ce72058a06ffa36c815c.jpg');"></div>
+        <div class="box" id="box4" style="background-image: url('https://i.pinimg.com/474x/ba/8d/76/ba8d76909d24a1e27550b703e6d37745.jpg');"></div>
+        <div class="box" id="box5" style="background-image: url('https://i.pinimg.com/474x/3b/ee/2d/3bee2d99aa9f7215abc185008da0c4bf.jpg');"></div>
+        <div class="box" id="box6" style="background-image: url('https://i.pinimg.com/474x/86/11/10/861110a948358d742e20dc05053d17ed.jpg');"></div>
+        <div class="box" id="box7" style="background-image: url('https://i.pinimg.com/474x/51/49/75/514975c4399e8ac1929fe0655008064c.jpg');"></div>
+        <div class="box" id="box8" style="background-image: url('https://i.pinimg.com/474x/b5/9e/59/b59e591da7eb192d0e31a7ed6e0856d0.jpg');"></div>
+        <div class="box" id="box9" style="background-image: url('https://i.pinimg.com/474x/88/3a/f4/883af40d2dd38276fe032bcd0ddb1f15.jpg');"></div>
+    </div>
+</body>
+</html>
