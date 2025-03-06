@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main{
+            height: 100vh;
+            width: 100vw;
+            background-color: lightseagreen;
+            display: grid;
+            place-content: center;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 50px;
+            padding: 2vw;
+        }
+
+        .box{
+            height: 250px;
+            width: 250px;
+            background-color: maroon;
+            /* transition-property: width, backgroung-color; */
+            transition-property: all;
+            transition-duration: 3s;
+            transition-delay: 0.1s;
+            /* transition-timing-function: step-end; */
+            /* transition-timing-function: step-start; */
+            transition-timing-function: steps(6, jump-start);
+        }
+
+        .box:hover{
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+
+        #box1 {
+            transform: matrix(0.1, 1, -0.3, 1, 0, 0);
+        }
+
+        #box2 {
+            transform: matrix(1, 2, -1, 1, 80, 80);
+            background-color: rgb(137, 52, 52);
+        }
+
+        #box3 {
+            transform: matrix(1.2, 0.2, -1, 0.9, 0, 20);
+            background-color: rgb(118, 81, 81);
+        }
+
+        #box4 {
+            transform: matrix(0.4, 0, 0.5, 1.2, 60, 10);
+            background-color: rgb(109, 97, 97);
+        }
+
+        #box5 {
+            transform: matrix(0, 1, 1, 0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Steps in transition-timing-function and 
+     matrix in transform -->
+     <div class="main">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+     </div>
+    
+</body>
+</html>

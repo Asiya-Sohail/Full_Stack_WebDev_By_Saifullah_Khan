@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 25 b</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+            background-color: lightblue;
+            display: grid;
+            place-content: center;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 100px;
+            padding: 4vw;
+        }
+
+        .box {
+            background-color: blueviolet;
+        }
+
+        #box1 {
+            transform: rotateX(45deg);
+        }
+
+        #box2 {
+            transform: rotateY(45deg);
+        }
+
+        #box3 {
+            transform: rotate(45deg);
+        }
+
+        #box4 {
+            transform: scaleX(1.5);
+        }
+
+        #box5 {
+            transform: scaleY(1.5);
+        }
+
+        #box6 {
+            transform: scale(1.5);
+        }
+
+        #box7 {
+            transform: skewX(45deg);
+        }
+
+        #box8 {
+            transform: skewY(45deg);
+        }
+
+        #box9 {
+            transform: skew(45deg);
+        }
+
+        #box10 {
+            /* transform: translateX(100px); */
+            transform: translateX(100px);
+        }
+
+        #box11 {
+            transform: translateY(100px);
+        }
+
+        #box12 {
+            transform: translateX(100px 200px );
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+        <div class="box" id="box7"></div>
+        <div class="box" id="box8"></div>
+        <div class="box" id="box9"></div>
+        <div class="box" id="box10"></div>
+        <div class="box" id="box11"></div>
+        <div class="box" id="box12"></div>
+    </div>
+</body>
+</html>
