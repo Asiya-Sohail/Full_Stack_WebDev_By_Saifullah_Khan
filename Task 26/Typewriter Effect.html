@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Writer Effect</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #212121;
+        }
+
+        .main {
+            width: 0rem;
+            overflow: hidden;
+            border-right: 2px solid #c7c7c7;
+            animation-name: typewritter;
+            animation-duration: 7s;
+            animation-delay: 0.2s;
+            animation-iteration-count: 1;
+            /* animation-timing-function: steps(17, jump-both); */
+            animation-timing-function: step-end;
+            animation-fill-mode: forwards;
+            /* animation-direction: alternate; */
+            /* animation: typewritter-Effect 5s steps(24, jump-both) 0.2s  step-end forwards; */
+        }
+
+        p{
+            font-size: 5rem;
+            font-weight: 4vw;
+            color: #c7c7c7;
+            letter-spacing: 0.3rem;
+            word-spacing: 0.2rem;
+            white-space: nowrap;
+        }
+
+        @keyframes typewritter {
+            0% {
+                width: 0rem;
+            }
+            6.25% {
+                width: 3.05rem;
+            }
+            12.5% {
+                width: 6.1rem;
+            }
+            18.75% {
+                width: 9.15rem;
+            }
+            25% {
+                width: 12.2rem;
+            }
+            31.25% {
+                width: 15.25rem;
+            }
+            37.5% {
+                width: 18.3rem;
+            }
+            43.75% {
+                width: 21.35rem;
+            }
+            50% {
+                width: 24.4rem;
+            }
+            56.25% {
+                width: 27.45rem;
+            }
+            62.5% {
+                width: 30.5rem;
+            }
+            68.75% {
+                width: 33.55rem;
+            }
+            75% {
+                width: 36.6rem;
+            }
+            81.25% {
+                width: 39.65rem;
+            }
+            87.5% {
+                /* width: 42.7rem; */
+                width: 41.1rem;
+            }
+          
+            93.75% {
+                /* width: 45.75rem; */
+                width: 41.1rem;
+            }
+
+            100% {
+                /* width: 48.8rem; */
+                width: 41.1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>Typewriter Effect</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 26 Animations</title>
+    <style>
+        :root {
+            --primary-color: #212121;
+            --secondary-color: #515151;
+            --ascent-color: #919191;
+            --full-height: 100vh;
+            --full-width: 100vw;
+            --font-size: 18px;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: var(--full-height);
+            width: var(--full-width);
+            overflow: hidden;
+            background-color: var(--secondary-color);
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: var(--ascent-color);
+            position: relative;
+            /* animation-name: rightmove;
+            animation-duration: 5s;
+            animation-iteration-count: 2;
+            animation-delay: 0.5s;
+            animation-timing-function: ease-in;
+            animation-direction: alternate-reverse;
+            animation-fill-mode: backwards; */
+            animation: rightmove 5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s 5 alternate both;
+            margin: 20px;
+        }
+
+        @keyframes rightmove {
+            from {
+                top: 0;
+                left: 0;
+            }
+
+            to {
+                top: 0;
+                left: 1000px;
+            }
+        }
+
+        #box1 {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+        <div class="box" id="box1"></div>
+    </div>
+</body>
+</html>
