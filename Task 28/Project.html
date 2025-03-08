@@ -1,0 +1,181 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Waves</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+            background-color: #141414;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main .section {
+            height: 80%;
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 1rem;
+            position: relative;
+        }
+
+        .box {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-inline: 1px solid #c7c7c7;
+        }
+
+        #box1 {
+            background-image: url("https://i.pinimg.com/474x/c3/25/a4/c325a4c2941d52555975aa3f02cc5759.jpg");
+        }
+
+        #box2 {
+            background-image: url("https://i.pinimg.com/474x/fa/63/b3/fa63b336e41a302feadd4dabf0813d37.jpg");
+        }
+
+        #box3 {
+            background-image: url("https://i.pinimg.com/474x/53/49/ef/5349efc3c2e403bd33ce16b7c6be6135.jpg");
+        }
+
+        #box4 {
+            background-image: url("https://i.pinimg.com/474x/b8/4c/2e/b84c2ee55838a9df0c1b7f45cb1bbdd4.jpg");
+        }
+
+        #box5 {
+            background-image: url("https://i.pinimg.com/474x/3c/51/d1/3c51d1fd754cfb70ec89502afee738a9.jpg");
+        }
+
+        #box6 {
+            background-image: url("https://i.pinimg.com/474x/93/0c/1f/930c1f7443bcc20dba25ddf29b0e6864.jpg");
+        }
+
+        #box7 {
+            background-image: url("https://i.pinimg.com/474x/3c/52/96/3c52963b9795e84c6f108b50222ca71c.jpg");
+        }
+
+        #box8 {
+            background-image: url("https://i.pinimg.com/474x/cb/1d/5a/cb1d5a5854341d32071e923bc2e96e1d.jpg");
+        }
+
+        #box9 {
+            background-image: url("https://i.pinimg.com/474x/c5/d0/ca/c5d0ca4bec0e56a00122f64232170880.jpg");
+        }
+
+        #box10 {
+            background-image: url("https://i.pinimg.com/474x/6b/4d/11/6b4d11cb399222c1c62b97151f7ae563.jpg");
+        }
+
+        #box11 {
+            background-image: url("https://i.pinimg.com/474x/bb/38/6f/bb386f51c737f0cd9eb5bae9ff37c6b4.jpg");
+        }
+
+        #box12 {
+            background-image: url("https://i.pinimg.com/474x/e1/99/b2/e199b25cd826924f861cf8762eee449c.jpg");
+        }
+
+        #box13 {
+            background-image: url("https://i.pinimg.com/474x/44/e3/55/44e355e5c407450afdb47b13db5972ab.jpg");
+        }
+
+        /* For top waves */
+
+        .custom-shape-divider-top-1741420202 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 101%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .custom-shape-divider-top-1741420202 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 123px;
+        }
+
+        .custom-shape-divider-top-1741420202 .shape-fill {
+            fill: #141414;
+        }
+
+        /* For Bottom Waves */
+        .custom-shape-divider-bottom-1741420381 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 106%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom-1741420381 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 123px;
+        }
+
+        .custom-shape-divider-bottom-1741420381 .shape-fill {
+            fill: #141414;
+        }
+
+        .box:hover {
+            z-index: 1000;
+            transform: scale(1.2);
+            margin-block: 4vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="section">
+            <div class="custom-shape-divider-top-1741420202">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+            <div class="box" id="box4"></div>
+            <div class="box" id="box5"></div>
+            <div class="box" id="box6"></div>
+            <div class="box" id="box7"></div>
+            <div class="box" id="box8"></div>
+            <div class="box" id="box9"></div>
+            <div class="box" id="box10"></div>
+            <div class="box" id="box11"></div>
+            <div class="box" id="box12"></div>
+            <div class="box" id="box13"></div>
+            <div class="custom-shape-divider-bottom-1741420381">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

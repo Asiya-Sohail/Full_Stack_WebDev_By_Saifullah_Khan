@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 28 b</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .main {
+        width: 100vw;
+        height: 100vh;
+        background-color: #8936b0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+
+      .section {
+        width: 100%;
+        height: 50%;
+        padding-block: 5vw;
+      }
+
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 5vw;
+        padding-inline: 8px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        background-color: #451452;
+        position: relative;
+      }
+
+      .wrapper::before {
+        content: "";
+        width: 100%;
+        height: 50px;
+        background-color: #451452;
+        position: absolute;
+        top: -3rem;
+        left: 0;
+        rotate: 180deg;
+        mask-image: url(svg-path.svg);
+        z-index: 80;
+      }
+
+      .wrapper::after {
+        content: "";
+        width: 100%;
+        height: 50px;
+        background-color: #451452;
+        position: absolute;
+        bottom: -3rem;
+        left: 0;
+        mask-image: url(svg-path.svg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="section">
+        <div class="wrapper">
+          <h2>Heading</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita
+            nam dolor sequi possimus, recusandae sint!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
