@@ -1,0 +1,619 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bento Box Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        .main {
+            width: 100%;
+            /* 100vw includes the scrollbar width, which might push content beyond the viewport.*/
+            height: 100vh;
+            background-color: #fedcdb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-sec {
+            height: 90%;
+            width: 85%;
+            background-color: #111110;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 1rem;
+            place-content: center;
+            padding: 1vw;
+        }
+
+        .box {
+            background-color: #fff3f3;
+            border-radius: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #box1,
+        #box4,
+        #box5,
+        #box6 {
+            grid-row: span 2;
+        }
+
+        #box5,
+        #box9 {
+            grid-column: span 2;
+        }
+
+        #box1,
+        #box5,
+        #box9 {
+            background-color: #fedcdb;
+        }
+
+        #box1 .cont {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box1 .circle {
+            width: 50%;
+            height: 50%;
+            border-radius: 100%;
+            border: 0.5rem solid #2f2324;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #box1 .circle .inner-circle {
+            width: 90%;
+            height: 90%;
+            border-radius: 100%;
+            border: 0.5rem solid #ea7f79;
+            position: relative;
+            padding: 1vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box1 .circle .inner-circle .pos {
+            width: 25%;
+            height: 50%;
+            rotate: 45deg;
+            background-color: #fedcdb;
+            border-radius: 8px;
+            position: absolute;
+            top: -7px;
+            left: -1.5px;
+        }
+
+        #box1 .circle .inner-circle .inner-txt {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inner-txt h5,
+        #box8 .cont h3,
+        #box9 .cont .left h4 {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .inner-txt p {
+            font-size: 0.4rem;
+            color: #616161;
+        }
+
+        #box1 .msg {
+            font-weight: 600;
+        }
+
+        #box1 .num-cont {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        #box1 .msg-cont {
+            font-size: 0.8rem;
+            color: #616161;
+        }
+
+        #box6 .cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        #box6 .text {
+            font-size: 1rem;
+            font-weight: 600;
+            width: 80%;
+            color: #c7c7c7;
+            background-color: #111110;
+            line-height: 1.2;
+            border-radius: 1rem;
+            padding: 0.5rem;
+        }
+
+        #box6 .short-grid {
+            height: 55%;
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            place-content: center;
+            gap: 0.4rem;
+            padding-block: 2vw;
+        }
+
+        #box6 .short-grid img {
+            width: 6rem;
+            height: 4rem;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 30%;
+        }
+
+        #box2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1vw;
+        }
+
+        #box2 .top {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #box2 .top h3,
+        #box2 .top i,
+        #box3 .users,
+        #box4 .layer3 .users {
+            font-size: 2rem;
+        }
+
+        #box2 .bottom {
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.3;
+            display: flex;
+            justify-content: flex-start;
+            width: 80%;
+            word-wrap: break-word;
+        }
+
+        #box3 .cont,
+        #box8 .cont,
+        #box7 .cont,
+        #box9 .cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-end;
+        }
+
+        #box3 p,
+        #box4 .layer1,
+        #box4 .layer3 p,
+        #box8 .cont p {
+            color: #616161;
+            font-weight: 600;
+        }
+
+        #box3 .inc,
+        #box4 .layer3 .inc {
+            font-size: 1rem;
+            color: green;
+            font-weight: 600;
+        }
+
+        #box4 .layer1,
+        #box4 .layer2,
+        #box4 .layer3 {
+            width: 90%;
+        }
+
+        #box4 .cont {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: relative;
+            gap: 0.5rem;
+            padding: 1vw;
+        }
+
+        #box4 .layer2,
+        #box8 .colors {
+            display: flex;
+            align-items: center;
+            padding-block: 0.6vw;
+        }
+
+        #box4 .layer2 img {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 100%;
+            object-fit: cover;
+            object-position: top;
+            transform: scale(1.2);
+            border: 2px solid white;
+        }
+
+        #box4 .layer2 .circle {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #616161;
+            color: rgb(202, 202, 202);
+            font-weight: 600;
+            transform: scale(1.2);
+            font-size: 0.8rem;
+            border: 2px solid white;
+        }
+
+        #box4 .layer3 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 5rem;
+        }
+
+        #box4 .layer3 .layer3-cont {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.1rem;
+            line-height: 1.1;
+            width: 100%;
+        }
+
+        #box4 .layer3 .inc {
+            color: #d79999;
+        }
+
+        #box4 .spiral {
+            position: absolute;
+            width: 40%;
+            bottom: -0.5rem;
+            right: -1rem;
+        }
+
+        #box8 .cont,
+        #box7 .cont {
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        #box8 .colors {
+            margin-top: 0.2rem;
+            gap: 0.4rem;
+        }
+
+        #box8 .colors .sub-box {
+            height: 2rem;
+            width: 3rem;
+            border-radius: 0.4rem;
+            background-color: black;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        #box8 .colors #sub-box1 {
+            background-color: #545253;
+        }
+
+        #box8 .colors #sub-box2 {
+            background-color: #C5C3C4;
+        }
+
+        #box8 .colors #sub-box3 {
+            background-color: #FE797A;
+        }
+
+        #box8 .colors #sub-box4 {
+            background-color: #FDDCDD;
+        }
+
+        #box7 .cont img {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        #box9 .cont {
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: row;
+        }
+
+        #box9 .cont .left {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        #box9 .cont .right img {
+            width: 6rem;
+            height: 5.5rem;
+        }
+
+        #box5 .cont img {
+            width: 20rem;
+            height: 20rem;
+            position: relative;
+            top: -2rem;
+        }
+
+        /* @media (max-width : 531px) {
+            .main {
+                width: 100%;
+                height: auto;  Don't give height for mobile
+            }
+
+            .grid-sec {
+                gap: 1rem;
+                padding: 5vw;
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(9, 1fr);
+            }
+
+            #box1,
+            #box4,
+            #box5,
+            #box6,
+            #box9 {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+
+            #box1 .cont, #box2, #box3 .cont, #box4 .cont, #box5 .cont, #box6 .cont, #box7 .cont, #box8 .cont, #box9 .cont{
+                width: 100%;
+            }        
+        } */
+
+        @media (max-width : 1000px) {
+            .main {
+                width: 100%;
+                height: auto; /* Don't give height for mobile*/
+            }
+
+            .grid-sec {
+                gap: 1rem;
+                padding: 2vw;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+
+            #box1,
+            #box4,
+            #box6,
+            #box9 {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+
+            #box5 {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            #box1 .cont, #box2, #box3 .cont, #box4 .cont, #box5 .cont, #box6 .cont, #box7 .cont, #box8 .cont, #box9 .cont{
+                width: 100%;
+            }    
+            
+            #box1 .cont {
+                gap: 0.6rem;
+            }
+
+            #box1 .circle {
+                width: 35%;
+                height: 60%;
+            }
+
+            #box3 .cont , #box4 .cont, #box9 .cont {
+                padding-inline: 5vw;
+                gap: 0.6rem;
+            }
+
+            #box5 .cont {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #box5 .cont img {
+                width: 30rem;
+                height: 30rem;
+                top: 0;
+            }
+        }
+
+        @media  (max-width : 600px) {
+        
+            #box1 .circle {
+                width: 30%;
+                height: 80%;
+            }
+
+            .grid-sec {
+                width: 98%;
+                gap: 1rem;
+                padding: 5vw;
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(10, 1fr);
+            }
+
+            #box1,
+            #box4,
+            #box6,
+            #box9 {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+
+            #box5 {
+                grid-column: span 1;
+                grid-row: span 2;
+            }
+
+            #box3 .cont , #box4 .cont, #box9 .cont {
+                padding-inline: 2vw;
+                gap: 0.6rem;
+            }
+
+            #box3 .cont , #box4 .cont {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .grid-sec {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="grid-sec">
+            <div class="box" id="box1">
+                <div class="cont">
+                    <p class="msg">First Round of funding</p>
+                    <div class="circle">
+                        <div class="inner-circle">
+                            <div class="pos"></div>
+                            <div class="inner-txt">
+                                <h5>75%</h5>
+                                <p>#growing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="num-cont">2.5K</div>
+                    <div class="msg-cont">263 Contributions in the last year</div>
+                </div>
+            </div>
+            <div class="box" id="box2">
+                <div class="top">
+                    <h3>4.875</h3>
+                    <i class="ri-heart-fill"></i>
+                </div>
+                <div class="bottom">
+                    Project Views <br />
+                    Last Year
+                </div>
+            </div>
+            <div class="box" id="box3">
+                <div class="cont">
+                    <p>New Users</p>
+                    <h3 class="users">57K</h3>
+                    <div class="inc">+10%</div>
+                </div>
+            </div>
+            <div class="box" id="box4">
+                <div class="cont">
+                    <div class="layer1">Team of passionate designers and developers</div>
+                    <div class="layer2">
+                        <img src="https://i.pinimg.com/474x/2a/31/4d/2a314dc8dfd74ccc9bbd1ecbd996621c.jpg" alt="img">
+                        <img src="https://i.pinimg.com/474x/b9/e4/5d/b9e45d2667c272dfb56e22fc0e1fbc64.jpg" alt="img">
+                        <img src="https://i.pinimg.com/474x/e6/3a/12/e63a1274d16ece550d0886e481cad659.jpg" alt="img">
+                        <img src="https://i.pinimg.com/474x/e7/cf/72/e7cf7247554cf19fbdfc777bc869afb5.jpg" alt="img">
+                        <div class="circle">+2</div>
+                    </div>
+                    <div class="layer3">
+                        <div class="layer3-cont">
+                            <p>Daily New Clients</p>
+                            <h3 class="users">54</h3>
+                            <div class="inc">+40%</div>
+                        </div>
+                        <img src="./spiral.png" alt="spiral" class="spiral">
+                    </div>
+                </div>
+            </div>
+            <div class="box" id="box5">
+                <div class="cont">
+                    <img src="./girl.png" alt="girl">
+                </div>
+            </div>
+            <div class="box" id="box6">
+                <div class="cont">
+                    <div class="text">Smart Digital Agency For Your Business</div>
+                    <div class="short-grid">
+                        <img src="https://i.pinimg.com/474x/12/1a/db/121adbb85f4950882abdcc0cd49a7a95.jpg" alt="img1" />
+                        <img src="https://i.pinimg.com/474x/31/5b/83/315b83b63690a086cdc14c6e7ea27af5.jpg" alt="img2" />
+                        <img src="https://i.pinimg.com/474x/34/df/e8/34dfe8242ca6d0b663de5d4098d39f47.jpg" alt="img3" />
+                        <img src="https://i.pinimg.com/474x/ce/e1/1a/cee11a1ad91841c70fbe067064df6f2e.jpg" alt="img4" />
+                    </div>
+                </div>
+            </div>
+            <div class="box" id="box7">
+                <div class="cont">
+                    <img src="./three-circle.png" alt="Three Circle">
+                    <h2>CUBO</h2>
+                </div>
+            </div>
+            <div class="box" id="box8">
+                <div class="cont">
+                    <h2>Font</h2>
+                    <p>Sk-Modernist</p>
+                    <div class="colors">
+                        <div class="sub-box" id="sub-box1"></div>
+                        <div class="sub-box" id="sub-box2"></div>
+                        <div class="sub-box" id="sub-box3"></div>
+                        <div class="sub-box" id="sub-box4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box" id="box9">
+                <div class="cont">
+                    <div class="left">
+                        <h4>We Build Future of Design Industry</h4>
+                        <p>Crafting Meaningful UI/UX Design</p>
+                    </div>
+                    <div class="right">
+                        <img src="./tool.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Box Layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .main {
+            width: 100vw;
+            height: 110vh;
+            background-color: #DDE1E6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4vw 2vw;
+            gap: 20px;
+        }
+
+        .main .name {
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        .bento-box {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .bento-box .box {
+            background-color: #EDEDED;
+            border-radius: 16px;
+            border: 2px solid white;
+            padding: 2vw;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+            scale: 0;
+            opacity: 0;
+            animation: ChangingScale 2s linear 1s 1  forwards;
+        }
+
+        #box1, #box5 {
+            grid-column: span 2;
+        }
+
+        #box3, #box5 {
+            grid-row: span 2;
+            overflow: hidden;
+        }
+
+        .main .bento-box .box .label {
+            font-size: 12px;
+            padding: 4px 8px;
+            background-color: #ADDAAD;
+            border-radius: 30px;
+            color: #3D600F;
+            font-weight: 600;
+        }
+
+        #box1 .text {
+            color: #414141;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        #box2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #box2 img{
+            height: 120px;
+            width: 120px;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+
+        #box4 {
+            background-image: url('https://i.pinimg.com/474x/30/6b/b4/306bb4a01a064c708d84718e5a9b70da.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .experience {
+            width: 100%;
+        }
+
+        .experience .exp-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0px;
+            border-bottom: 1.5px solid #616161;
+        }
+
+        .experience .exp-item .left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .exp-item .left .role {
+            font-size: 1.2rem;
+            color: #212121;
+        }
+
+        .exp-item .left .company {
+            font-size: 0.8rem;
+            color: #414141;
+        }
+
+        .exp-item .right .date {
+            color: #414141;
+        }
+
+        #box3 img {
+            width: 90%;
+            mix-blend-mode: darken; /*for removing the background*/
+            position: relative;
+            transform: rotate(-45deg);
+            left: 50%;
+        }
+
+        #box7 {
+            background-image: url('https://i.pinimg.com/474x/e8/18/92/e818925a6570e1806626ef6da3ebb40d.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #21212149;
+            background-blend-mode: darken;
+        }
+
+        @media screen and (max-width: 500px) {
+            .main {
+                min-height: 100vh;
+            }
+            
+            .bento-box{
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(7, 1fr);
+            }
+
+            #box1, #box2, #box3, #box4, #box5, #box6, #box7 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .box {
+                height: 200px;
+            }
+
+            #box3 img {
+                width: 40%;
+            }
+
+            #box5 {
+                height: 400px;
+            }
+        }
+
+        @keyframes ChangingScale {
+            from {
+                scale: 0;
+                opacity: 0;
+            }
+
+            to {
+                scale: 1;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2 class="name">Asiya Sohail</h2>
+        <div class="bento-box">
+            <div class="box" id="box1">
+                <div class="label">About</div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, aut ullam maxime sed nostrum soluta.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, aut ullam maxime sed nostrum soluta.</p>
+                </div>
+            </div>
+            <div class="box" id="box2">
+                <img src="https://i.pinimg.com/474x/81/02/6f/81026fabdfa00e93ff89e307516d8cbf.jpg" alt="Man">
+            </div>
+            <div class="box" id="box3">
+                <div class="label">Case Study</div>
+                <img src="https://i.pinimg.com/474x/26/be/56/26be56634ad9773c9d8f6315cac2cba7.jpg" alt="phone">
+            </div>
+            <div class="box" id="box4">
+            </div>
+            <div class="box" id="box5">
+                <div class="label">Experience</div>
+                <div class="experience">
+                    <div class="exp-item">
+                        <div class="left">
+                            <h3 class="role">Design Lead</h3>
+                            <p class="company">Wanderu</p>
+                        </div>
+                        <div class="right">
+                            <p class="date">2023 - Present</p>
+                        </div>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="left">
+                            <h3 class="role">Design Lead</h3>
+                            <p class="company">Wanderu</p>
+                        </div>
+                        <div class="right">
+                            <p class="date">2023 - Present</p>
+                        </div>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="left">
+                            <h3 class="role">Design Lead</h3>
+                            <p class="company">Wanderu</p>
+                        </div>
+                        <div class="right">
+                            <p class="date">2023 - Present</p>
+                        </div>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="left">
+                            <h3 class="role">Design Lead</h3>
+                            <p class="company">Wanderu</p>
+                        </div>
+                        <div class="right">
+                            <p class="date">2023 - Present</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box" id="box6">
+                <div class="label">Services</div>
+            </div>
+            <div class="box" id="box7">
+                <div class="label">Case Study</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
