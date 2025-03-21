@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Script's NavBar</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <!-- https://khans-scripts.netlify.app/ -->
+      <style>
+        /* Add this CSS to ensure proper visibility control */
+        .horizontal-bar {
+          display: none;
+        }
+        
+        .horizontal-bar:not(.hidden) {
+          display: flex;
+        }
+      </style>
+</head>
+<body>
+    <div class="navbar w-full h-[5rem] bg-red-500 flex justify-between p-4 text-white items-center">
+        <h2>Khan's Script</h2>
+
+        <div class="menu flex h-full justify-around items-center sm:w-[70%]">
+            <span class="invisible sm:visible">Home</span>
+            <span class="invisible sm:visible">About Us</span>
+            <span class="invisible sm:visible">Languages</span>
+            <i class="ri-menu-line text-lg visible sm:invisible "></i>
+        </div>
+    </div>
+    <div class="horizontal-bar p-4 bg-red-500 hidden flex-col text-white sm:invisible">
+        <span class="m-2 border-b-1 pb-1 border-white inline-block w-full">Home</span>
+        <span class="m-2 border-b-1 pb-1 border-white inline-block w-full">About Us</span>
+        <span class="m-2 border-b-1 pb-1 border-white inline-block w-full">Languages</span>
+    </div>
+
+    <script>
+        // Get the menu icon and horizontal bar elements
+        const menuIcon = document.querySelector('.ri-menu-line');
+        const horizontalBar = document.querySelector('.horizontal-bar');
+      
+        // Toggle horizontal bar visibility on icon click
+        menuIcon.addEventListener('click', () => {
+          horizontalBar.classList.toggle('hidden');
+        });
+      </script>
+</body>
+</html>
