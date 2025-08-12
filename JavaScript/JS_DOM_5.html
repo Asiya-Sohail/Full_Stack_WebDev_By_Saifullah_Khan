@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo App</title>
+  </head>
+
+  <body class="bg-[#2f3640] text-gray-800 min-h-screen flex justify-center items-start pt-10">
+    <div class="w-full max-w-screen-md px-4 flex flex-col items-center gap-8">
+      <!-- Top Input Section -->
+      <div class="w-full flex flex-col sm:flex-row items-center gap-4">
+        <input
+          type="text"
+          placeholder="Enter your task..."
+          class="flex-1 w-full p-3 rounded-md border-none outline-none text-base shadow-md"
+          id="input_box"
+        />
+        <button
+          class="bg-[#00a8ff] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#0097e6] transition-all duration-300 shadow-md w-full sm:w-auto"
+        id="add_btn">
+          Add Todo
+        </button>
+      </div>
+
+      <!-- Todo Container -->
+      <div class="w-full flex flex-col gap-4" id="todo_container">
+        <!-- Todo Item -->
+        <div class="w-full bg-green-100 flex justify-between items-center p-4 rounded-md shadow-md">
+          <div class="flex items-center gap-3">
+            <input type="checkbox" class="accent-green-500 w-5 h-5" />
+            <p class="text-lg font-medium">Coding</p>
+          </div>
+          <button
+            class=" delete_btn bg-[#e84118] text-white px-4 py-2 rounded-md hover:bg-[#c23616] transition-all duration-300"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let input_box = document.querySelector("#input_box")
+      let add_btn = document.querySelector("#add_btn")
+      let todo_container = document.querySelector("#todo_container")
+
+    // Class 57 (TodoApp 1 , will  do again with new method) 
+    //   add_btn.addEventListener("click" , () => {
+    //     // let new_todo= document.createElement('div') It's better to use backtick
+    //     if (input_box.value) {
+    //       let myTodoText = input_box.value;
+    //       let new_todo = `
+    //       <div class="w-full bg-green-100 flex justify-between items-center p-4 rounded-md shadow-md">
+    //         <div class="flex items-center gap-3">
+    //           <input type="checkbox" class="accent-green-500 w-5 h-5" />
+    //           <p class="text-lg font-medium">${myTodoText}</p>
+    //         </div>
+    //         <button
+    //           class=" delete_btn bg-[#e84118] text-white px-4 py-2 rounded-md hover:bg-[#c23616] transition-all duration-300"
+    //         >
+    //           Delete
+    //         </button>
+    //       </div>
+    //       `
+    //       todo_container.innerHTML += new_todo
+    //       input_box.value = ""
+    //     }
+    //   })
+
+    // Step 1 : Click on Add todo Button
+    // Step 2 : Take value from input_box
+    // Step 3 : Make a new todo
+    // Step 4 : Add new todo to todo container
+
+    add_btn.addEventListener("click", () => {
+      let inputValue =  input_box.value;
+      let newTodo = document.createElement("div");
+      
+      newTodo.className = "w-full bg-green-100 flex justify-between items-center p-4 rounded-md shadow-md";
+      newTodo.innerHTML = `
+        <div class="flex items-center gap-3">
+          <input type="checkbox" class="checkbox accent-green-500 w-5 h-5" />
+          <p class="todo_text text-lg font-medium">${inputValue}</p>
+        </div>
+        <button
+          class=" delete_btn bg-[#e84118] text-white px-4 py-2 rounded-md hover:bg-[#c23616] transition-all duration-300"
+        >
+          Delete
+        </button>
+      `
+        todo_container.appendChild(newTodo)
+        input_box.value = ""
+
+        let delete_btn = newTodo.querySelector(".delete_btn")
+
+        delete_btn.addEventListener("click", () => {
+          newTodo.remove()
+        })
+
+        let checkbox = newTodo.querySelector(".checkbox")
+        // checkbox.addEventListener("change", (event) => {
+        //   if (event.target.checked) {
+        //     newTodo.querySelector(".todo_text").classList.add("line-through")
+        //   } else {
+        //     newTodo.querySelector(".todo_text").classList.remove("line-through")
+        //   }
+        // })
+
+        // Another way 
+        checkbox.addEventListener("change", () => {
+          newTodo.querySelector(".todo_text").classList.toggle("line-through")
+          newTodo.querySelector(".todo_text").classList.toggle("text-gray-500")
+        })
+    })
+    </script>
+  </body>
+</html>

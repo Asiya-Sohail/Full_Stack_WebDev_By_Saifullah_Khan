@@ -1,0 +1,44 @@
+<!-- JavaScript can react to all existing HTML events in the page -->
+ <!-- JavaScript can create new HTML events in the page -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 1</title>
+</head>
+<body>
+    <p id="para">
+        HIIII
+    </p>
+
+    <div>
+        <h1>Heading</h1>
+        <h1>Heading</h1>
+        <h1>Heading</h1>
+    </div>
+
+    <script>
+        // alert("hello");
+        let p = document.getElementById("para")
+        console.log(p)
+        p.style.height = "200px"
+        p.style.width = "400px"
+        p.style.backgroundColor = "black"
+        p.style.color = "white"
+        p.style.fontSize = '24px'
+
+        // let myHeading = document.querySelectorAll("h1")
+        // not working
+
+        let myDiv = document.querySelector("div")
+        let myHeading = document.querySelector("div h1")
+        myHeading.style.backgroundColor = "red"
+        myHeading.style.padding = "4px"
+        myDiv.style.backgroundColor = "aqua"
+        myDiv.style.height = "400px"
+
+        
+    </script>
+</body>
+</html>
