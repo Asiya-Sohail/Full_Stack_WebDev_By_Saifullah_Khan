@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 4</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+            background-color: white;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding: 4vw;
+            transition: all ease-in-out 0.2s;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+        }
+
+        .btn {
+            font-size: 1.2vw;
+            border-radius: 40%;
+            padding: 2vw;
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- <button id="btn1">Click Me</button> -->
+         <div class="btn-container">
+            <button class="btn" id="red">Red</button>
+            <button class="btn" id="blue">Blue</button>
+            <button class="btn" id="green">Green</button>
+            <button class="btn" id="yellow">Yellow</button>
+            <button class="btn" id="lightblue">Light Blue</button>
+            <button class="btn" id="lightcoral">Light Coral</button>
+        </div>
+    </div>
+    
+    <script>
+
+        // function clickme(e) {
+        //     console.log("Button Clicked")
+        // }
+        // let btn1 = document.querySelector("#btn1")
+        // btn1.addEventListener("click", (e) => {
+        //     console.log("Button Clicked")
+        // })
+        // btn1.addEventListener("click", clickme)
+        // btn1.addEventListener("click", function(){
+        //     console.log("button Clicked")
+        // })
+
+        let main = document.querySelector(".main")
+        let clickbuttons = document.querySelectorAll(".btn")
+
+        clickbuttons.forEach(element => {
+            element.addEventListener("click", () => {
+                main.style.backgroundImage = `linear-gradient(white, ${element.id})`
+            })
+            element.style.backgroundImage = `linear-gradient(rgb(216, 213, 213), ${element.id})`
+            element.style.borderColor = "black"
+            element.style.borderWidth = "2px"
+            element.style.borderStyle = "solid"
+        });        
+    </script>
+</body>
+</html>

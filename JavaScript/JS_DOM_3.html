@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="des">
+            <h2>hhhh</h2>
+        </div>
+    </div>
+
+
+
+    <script>
+        // create
+        let myp = document.createElement("p")
+        console.log(myp)
+        // insert
+        let main = document.querySelector(".main")
+        main.appendChild(myp)
+        // update
+        myp.innerHTML = "Para"
+        console.log(main)
+        // delete
+        let des = document.querySelector(".des")
+        des.remove()
+    </script>
+</body>
+</html>

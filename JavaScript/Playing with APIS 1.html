@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Card</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main {
+      width: 70%;
+      margin: auto;
+      display: grid;
+      align-content: center;
+      grid-template-columns: repeat(3, auto);
+      gap: 1rem;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      color: #2f3640;
+    }
+
+    .info {
+      margin-bottom: 0.8rem;
+      color: #555;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>User's Details</h1>
+  <div class="main"></div>
+  <script src="./Playing with APIS 1.js"></script>
+</body>
+</html>

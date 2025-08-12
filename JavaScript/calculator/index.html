@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <div class="main h-screen w-screen bg-[#212121] flex items-center justify-center">
+    <div class="bg-white w-[400px] rounded-md p-2 flex flex-col gap-2">
+      <input type="text" class="p-2 text-end text-2xl font-semibold outline-none border-2 rounded-md" readonly>
+      <!-- btn-container btn-grid -->
+      <div class="grid grid-rows-5 grid-cols-4 gap-2">
+        <button id="ce" class="rounded-md p-2 bg-amber-200 active:bg-amber-300">CE</button>
+        <button id="c" class="rounded-md p-2 bg-amber-200 active:bg-amber-300">C</button>
+        <button id="cross" class="rounded-md p-2 bg-amber-200 active:bg-amber-300">❌</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">/</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">7</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">8</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">9</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">*</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">4</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">5</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">6</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">-</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">1</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">2</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">3</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">+</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">0</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">.</button>
+        <button class="rounded-md common-btn p-2 bg-amber-200 active:bg-amber-300">%</button>
+        <button id="equal" class="rounded-md p-2 bg-amber-200 active:bg-amber-300">=</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  let allCommonButtons = document.querySelectorAll('.common-btn');
+  let input = document.querySelector('input');
+  let equal = document.querySelector('#equal');
+  let ce = document.querySelector("#ce");
+  let c = document.querySelector("#c");
+  let cross = document.querySelector("#cross");
+  
+  allCommonButtons.forEach((singleBtn) => {
+    singleBtn.addEventListener("click", () => {
+      input.value += singleBtn.innerHTML
+    })
+  })  
+
+  // Eval gives us the result after calculating everything
+  equal.addEventListener("click", () => {
+    let result = eval(input.value);
+    input.value = result
+  })
+
+  ce.addEventListener("click", () => {
+    input.value = "";
+  })
+
+  c.addEventListener("click", () => {
+    input.value = "";
+  })
+
+  cross.addEventListener("click", () => {
+    let value = input.value;
+    let data = value.slice(0, -1)
+    input.value = data;    
+  })
+
+  
+</script>
+</html>

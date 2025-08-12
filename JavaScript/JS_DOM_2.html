@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 2</title>
+</head>
+<body>
+    <p class="name">name</p>
+    <h1 class="name">name</h1>
+    <div class="name">name</div>
+
+    <script>
+        // let p = document.querySelector("p")
+        // console.log(window)
+        let name = document.getElementsByClassName("name")
+        console.log(name)
+        console.log(name[0])
+        name[0].style.backgroundColor = "lightcoral"
+        let name2 = document.querySelectorAll(".name")
+        console.log(name2)
+        console.log(name2[0])
+
+        name2.forEach(element => {
+            element.style.fontSize = "4rem"
+        });
+    </script>
+</body>
+</html>
