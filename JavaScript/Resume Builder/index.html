@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="input-container" class="container py-5">
+    <h1 class="text-center mb-4 text-3xl font-semibold">Profile Information Form</h1>
+  
+    <!-- Info Section -->
+    <div class="section-card">
+      <div class="section-title">Info Section</div>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="info-name" placeholder="Name" />
+          <input type="text" class="form-control" id="info-job-title" placeholder="Job Title" />
+          <textarea class="form-control" id="info-summary" rows="3" placeholder="Summary"></textarea>
+        </div>
+
+        <!-- Interest and Skill -->
+        <div class="col-md-6">
+          <div class="section-title">Interest and Skills</div>
+          <input type="text" class="form-control" id="skills" placeholder="Coding, Development..." />
+          <input type="text" class="form-control" id="hobbies" placeholder="Football, Dancing..." />
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section-card">
+      <div class="section-title">Contact Section</div>
+      <div class="row">
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="contact-linkedin" placeholder="LinkedIn URL" />
+          <input type="text" class="form-control" id="contact-twitter" placeholder="Twitter URL" />
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="contact-facebook" placeholder="Facebook URL" />
+          <input type="text" class="form-control" id="contact-email" placeholder="Email" />
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="contact-phone" placeholder="Phone" />
+          <input type="text" class="form-control" id="contact-address" placeholder="Address" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Section -->
+    <div class="section-card">
+      <div class="section-title">Experience</div>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="experience-company" placeholder="Company Name" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="experience-title" placeholder="Job Title" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="experience-from">From</label>
+          <input type="date" class="form-control" id="experience-from" />
+        </div>
+        <div class="col-md-6">
+          <label for="experience-to">To</label>
+          <input type="date" class="form-control" id="experience-to" />
+        </div>
+      </div>
+      <textarea class="form-control mt-3" id="experience-description" rows="3" placeholder="Job Description"></textarea>
+      <button class="btn btn-warning" id="add-experience-btn">Add Experience</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mx-0 my-0">
+      <div class="col">
+        <button class="btn btn-success" id="generate-resume">Generate Resume</button>
+        <button class="btn btn-dark" id="download-resume">Download Resume</button>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- resume container -->
+  <div id="resume-container">
+  </div> 
+
+  <script src="./script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

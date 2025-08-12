@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+</head>
+<body>
+  
+  <script>
+
+    // localStorage.setItem("name" , "John")
+    // localStorage.setItem("age" , 21)
+    // // It stores everything in string
+    // localStorage.setItem("address" , [21, 344, 89])
+
+    // let myname = localStorage.getItem("name");
+    // let myage = localStorage.getItem("age");
+    // let myaddress = localStorage.getItem("address");
+    // console.log(myname, typeof myname);
+    // console.log(myage, typeof myage);
+    // console.log(myaddress, typeof myaddress);
+    
+    // console.log(localStorage.length);
+    // // Key is a method and i
+    // console.log(localStorage.key(0));
+    // let mykey = localStorage.key(2);
+    // console.log(localStorage.getItem(mykey));
+
+    let data = [
+      {
+        title : "my title 1",
+        description : "my description 1"
+      },
+      {
+        title : "my title 2",
+        description : "my description 2"
+      },
+    ]
+
+    // localStorage.setItem("data", data);
+
+    let myStringData = JSON.stringify(data);
+    console.log(myStringData, typeof myStringData);
+
+    // Why This ? 
+    // Because We need to cnvert it to string and then store in localstorage
+    // If you store directly so it will remove brackets etc
+    localStorage.setItem("data", myStringData);
+    let myOriginalData = JSON.parse(localStorage.getItem("data"));
+    console.log(myOriginalData, typeof myOriginalData);
+    
+      localStorage.clear()
+  </script>
+</body>
+</html>

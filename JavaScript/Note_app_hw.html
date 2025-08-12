@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note App</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: rgb(185, 153, 142);
+      display: flex;
+      justify-content: center;
+      /* align-items: center; This vertically centers .main, but when .main grows taller than the viewport, the content goes outside the screen and no scroll appears, so part of it becomes hidden.*/
+      padding: 2rem;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .main {
+      /* background-color: rgb(155, 133, 133); */
+      padding: 0.5rem;
+      border-radius: 20px;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), -5px -5px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .top-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      width: 50%;
+    }
+
+    .top-row .input {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .top-row .input input, .top-row textarea {
+      outline: none;
+      border: none;
+      border-radius: 0.6rem;
+      background-color: rgb(43, 21, 21);
+      color: #c7c7c7;
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+    }
+
+    .top-row textarea {
+      min-height: 8rem;
+    }
+
+    .top-row .input input{
+      width: 70%;
+    }
+   
+    .top-row .input input:focus {
+      border: 2px solid #c7c7c7;
+    }
+
+    button {
+      outline: none;
+      border: none;
+      width: 8em;
+      min-height: 3em;
+      border-radius: 0.6rem;
+      background-color: rgb(43, 21, 21);
+      color: #c7c7c7;
+    }
+
+    button:hover {
+      background-color: rgb(53, 29, 29);
+      border: 2px solid #c7c7c7;
+    }
+
+    .bottom-row {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      row-gap: 0.5rem;
+      overflow-y: auto;
+      /* -ms-overflow-style: none;     // for Internet Explorer
+      scrollbar-width: none; */
+    }
+
+    .bottom-row::-webkit-scrollbar {
+      display: none;                /* for Chrome, Safari */
+    }
+
+    .bottom-row > .card {
+      padding: 0.5rem;
+      background-color: white;
+      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+      border-radius: 0.4rem;
+      margin: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .bottom-row .card .title , .bottom-row .card .desc, .bottom-row .card .buttons {
+      border: 2px solid black;
+      width: 100%;
+      text-align: center;
+      border-radius: 0.2rem;
+      padding: 0.5rem;
+    }
+
+    .bottom-row .card .title {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .bottom-row .card .desc {
+      min-height: 8rem;
+    }
+
+    .bottom-row .card .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main ">
+    <header style="font-size: 2rem; font-weight: 800; color: rgb(43, 21, 21);"><b>Note Taking App</b></header>
+    <div class="top-row">
+      <div class="input">
+        <input type="text" value="">
+        <button id="add-btn">Add</button>
+      </div>
+      <textarea name="" id=""></textarea>
+    </div>
+    <div class="bottom-row"> 
+    </div>
+  </div>
+
+  <script>
+    let input_title = document.querySelector('.input input')
+    let add_btn = document.getElementById('add-btn')
+    let input_desc = document.querySelector('.top-row textarea')
+    let container = document.querySelector('.bottom-row')
+    let cardToUpdate = null; // Track the card being updated
+
+    add_btn.addEventListener("click", () => {
+      if (add_btn.innerText === "Add") {
+        let new_card = document.createElement('div')
+        new_card.className = 'card';
+        new_card.innerHTML = `
+            <div class="title">${input_title.value}</div>
+            <div class="desc">${input_desc.value}</div>
+            <div class="buttons">
+            <button id="update">Update</button> 
+            <button id="delete">Delete</button> 
+            </div>
+        `
+        container.appendChild(new_card)
+        input_title.value = '';
+        input_desc.value = '';
+
+        let delete_btn = new_card.querySelector('.buttons #delete')
+        delete_btn.addEventListener("click", () => {
+          new_card.remove();
+        })
+        
+
+        let update_btn = new_card.querySelector('.buttons #update')
+        update_btn.addEventListener("click", () => {
+          input_title.value = new_card.querySelector('.title').innerText;
+          input_desc.value = new_card.querySelector('.desc').innerText;
+          add_btn.innerText = "Update";
+          cardToUpdate = new_card;
+        })
+      } else if (add_btn.innerText = "Update" && cardToUpdate) {
+        cardToUpdate.querySelector('.title').innerText = input_title.value;
+        cardToUpdate.querySelector('.desc').innerText = input_desc.value;
+        input_title.value = '';
+        input_desc.value = '';
+        add_btn.innerText = "Add";
+        cardToUpdate = null;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Homework 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            padding: 2vw;
+            transition: all ease-in-out 0.2s;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 1vw;
+        }
+
+        .btn {
+            font-size: 1.2vw;
+            border-radius: 40%;
+            outline: none;
+            height: 4vw;
+            width: 4vw;
+            overflow: hidden;
+        }
+
+        .btn img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+         <div class="btn-container">
+            <button class="btn"><img src="https://i.pinimg.com/474x/f6/fb/bc/f6fbbcea7448148d3b9f786e15cab400.jpg" alt="img"></button>
+            <button class="btn"><img src="https://i.pinimg.com/474x/24/db/87/24db87b26bf5300cd3d8557ca47bcc74.jpg" alt="img"></button>
+            <button class="btn"><img src="https://i.pinimg.com/474x/a3/b5/e0/a3b5e0ccf9b2dba8d6e9a29efca6dcc4.jpg" alt="img"></button>
+            <button class="btn"><img src="https://i.pinimg.com/736x/44/f2/7f/44f27f10bd38c162f1b062fa70d8cda8.jpg" alt="img"></button>
+            <button class="btn"><img src="https://i.pinimg.com/474x/c0/e0/60/c0e0609a383236ce164b5850f455c0b0.jpg" alt="img"></button>
+            <button class="btn"><img src="https://i.pinimg.com/474x/7c/cc/01/7ccc015c6cebedd51bc2160ae96f54f3.jpg" alt="img"></button>
+        </div>
+    </div>
+    
+    <script>
+
+        let main = document.querySelector(".main")
+        let buttonimages = document.querySelectorAll(".btn img")
+
+        buttonimages.forEach(element => {
+            element.addEventListener("mouseover", () => {
+                main.style.backgroundImage = `url(${element.src})`
+                main.style.backgroundRepeat = "no-repeat"
+                main.style.backgroundSize = "cover"
+                main.style.backgroundPosition = "center"
+            })
+            
+            element.addEventListener("mouseleave", () => {
+                main.style.backgroundImage = ""
+            })
+        });        
+    </script>
+</body>
+</html>
